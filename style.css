@@ -1,9 +1,22 @@
+@font-face {
+    font-family: book;
+    src: url(mn-book.ttf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: demi;
+    src: url(mn-demi.ttf);
+    font-weight: 400;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   padding: 0 2rem;
+  font-family: book, sans-serif;
 }
 
 html, body {
@@ -51,40 +64,70 @@ hr {
   display: flex;
   flex-direction: column;
 }
-.header .flex-wrapper {
+
+.header .flex-wrapper{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 2rem;
 }
+
 .header .flex-wrapper h1 {
   max-width: 60rem;
   margin: 0 auto 0 0;
 }
-.header .flex-wrapper h2 {
-  text-align: right;
-}
 
 .countdown {
-  display: flex;
+  display: inline-flex;
   background: white;
-  padding: 5rem 1vw;
+  padding: 2.5rem 0rem 5rem;
 }
-.countdown h1 {
-  margin: 0 auto;
+
+.countdown .countdown__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  font-family: demi, sans-serif;
+}
+
+.countdown .countdown--unit{
+  font-size: 3vw;
+}
+
+.countdown .countdown--result{
   font-size: 10vw;
 }
+
 
 .footer {
   display: flex;
   flex-direction: column;
-  text-align: right;
 }
 .footer h3 {
-  max-width: 40rem;
   margin: 2rem 0 2rem auto;
 }
 .footer h4 {
   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .footer{  text-align: right;}
+
+  .footer h3 {  max-width: 40rem;}
+
+  .header .flex-wrapper h2 {  text-align: right;}
+}
+
+@media screen and (max-width: 750px) {
+
+  .header .flex-wrapper h1 {  margin-bottom: 2rem;}
+  .header .flex-wrapper{  flex-direction: column; align-items: flex-start;}
+  .countdown__block.minutes, .countdown__block.seconds{ display: none;}
+}
+
+@media screen and (max-width: 500px) {
+  .header .flex-wrapper{  flex-direction: column;}
+  .countdown__block.hours{ display: none;}
 }

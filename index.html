@@ -25,14 +25,10 @@
     <hr>
   </div>
   <div class='countdown'>
-<div id="countholder">
-  <h1>
-    <span id="days"></span><span>Days</span>
-    <span id="hours"></span><span>Hours</span>
-    <span id="minutes"></span><span>Minutes</span>
-    <span id="seconds"></span><span>Secondes</span>
-  </h1>
-</div>
+    <div class="countdown__block days"><span id="days" class="countdown--result"></span><span class="countdown--unit">Days</span></div>
+    <div class="countdown__block hours"><span id="hours" class="countdown--result"></span><span class="countdown--unit">Hours</span></div>
+    <div class="countdown__block minutes"><span id="minutes" class="countdown--result"></span><span class="countdown--unit">Minutes</span></div>
+    <div class="countdown__block seconds"><span id="seconds" class="countdown--result"></span><span class="countdown--unit">Secondes</span></div>
   </div>
   <div class='footer'>
     <hr>
@@ -94,7 +90,7 @@ function tick() {
  secs %= 60;
 
  //update the time display
- document.getElementById("days").innerHTML = curday;
+ document.getElementById("days").innerHTML = ((curday < 10 ) ? "0" : "" ) + curday;
  document.getElementById("hours").innerHTML = ((hours < 10 ) ? "0" : "" ) + hours;
  document.getElementById("minutes").innerHTML = ( (mins < 10) ? "0" : "" ) + mins;
  document.getElementById("seconds").innerHTML = ( (secs < 10) ? "0" : "" ) + secs;
