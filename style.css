@@ -1,12 +1,12 @@
 @font-face {
     font-family: book;
-    src: url(mn-book.ttf);
+    src: url(data/mn-book.ttf);
     font-weight: 100;
 }
 
 @font-face {
     font-family: demi;
-    src: url(mn-demi.ttf);
+    src: url(data/mn-demi.ttf);
     font-weight: 400;
 }
 
